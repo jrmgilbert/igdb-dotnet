@@ -38,7 +38,7 @@ namespace IGDB.Models
     /// <summary>
     /// The rating content descriptions
     /// </summary>
-    public IdentityOrValue<AgeRatingContentDescriptionV2> RatingContentDescriptions { get; set; }
+    public IdentitiesOrValues<AgeRatingContentDescriptionV2> RatingContentDescriptions { get; set; }
 
     /// <summary>
     /// The url for the image of a age rating
