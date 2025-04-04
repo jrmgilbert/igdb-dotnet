@@ -288,7 +288,7 @@ namespace IGDB
 
       public const string CollectionRelations = "collection_relations";
 
-      public const string CollectionRelationTypes = "collection_membership_types";
+      public const string CollectionRelationTypes = "collection_relation_types";
 
       public const string CollectionTypes = "collection_types";
 
@@ -398,7 +398,7 @@ namespace IGDB
       public const string Themes = "themes";
 
       public const string Websites = "websites";
-      
+
       public const string WebsiteTypes = "website_types";
     }
   }
