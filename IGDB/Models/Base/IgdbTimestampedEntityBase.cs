@@ -2,7 +2,7 @@ using System;
 
 namespace IGDB.Models
 {
-  public abstract class IgdbTimestampedEntityBase : IgdbEntityBase
+  public abstract class IgdbTimestampedEntityBase : IgdbEntityBase, ITimestamps
   {
     /// <summary>
     /// Date this was initially added to the IGDB database
