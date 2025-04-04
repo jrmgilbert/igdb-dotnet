@@ -1,18 +1,20 @@
-using Newtonsoft.Json;
-
 namespace IGDB.Models
 {
-  public class Cover : IIdentifier, IHasChecksum
+  /// <summary>
+  /// The cover art of games
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#cover"/>
+  public class Cover : IgdbImageEntityBase
   {
-    public bool? AlphaChannel { get; set; }
-    public bool? Animated { get; set; }
-    public string Checksum { get; set; }
+    /// <summary>
+    /// The game this cover is associated with.
+    /// If it is empty then this cover belongs to a game_localization, which can be found under game_localization field
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
+
+    /// <summary>
+    /// The game localization this cover might be associated with
+    /// </summary>
     public IdentityOrValue<GameLocalization> GameLocalization { get; set; }
-    public long? Id { get; set; }
-    public int? Height { get; set; }
-    public string ImageId { get; set; }
-    public string Url { get; set; }
-    public int? Width { get; set; }
   }
 }

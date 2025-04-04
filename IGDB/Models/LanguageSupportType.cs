@@ -1,13 +1,14 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class LanguageSupportType : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Language Support Types contains the identifiers for the support types that Language Support uses
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#language-support-type"/>
+  public class LanguageSupportType : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
-    public long? Id { get; set; }
+    /// <summary>
+    /// 
+    /// </summary>
     public string Name { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
   }
 }

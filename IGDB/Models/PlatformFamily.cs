@@ -1,10 +1,19 @@
 namespace IGDB.Models
 {
-  public class PlatformFamily : IIdentifier, IHasChecksum
+  /// <summary>
+  /// A collection of closely related platforms
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#platform-family"/>
+  public class PlatformFamily : IgdbEntityBase
   {
-    public string Checksum { get; set; }
-    public long? Id { get; set; }
+    /// <summary>
+    /// The name of the platform family
+    /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// A url-safe, unique, lower-case version of the name
+    /// </summary>
     public string Slug { get; set; }
   }
 }

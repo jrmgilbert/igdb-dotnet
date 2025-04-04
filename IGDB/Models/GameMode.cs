@@ -1,16 +1,24 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class GameMode : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Single player, Multiplayer etc
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#game-mode"/>
+  public class GameMode : IgdbTimestampedEntityBase
   {
-    
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
-    public long? Id { get; set; }
+    /// <summary>
+    /// The name of the game mode
+    /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// A url-safe, unique, lower-case version of the name
+    /// </summary>
     public string Slug { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
+
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
     public string Url { get; set; }
   }
 }

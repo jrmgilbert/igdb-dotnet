@@ -1,15 +1,24 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class PlayerPerspective : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Player perspectives describe the view/perspective of the player in a video game
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#player-perspective"/>
+  public class PlayerPerspective : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
-    public long? Id { get; set; }
+    /// <summary>
+    /// 
+    /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// A url-safe, unique, lower-case version of the name
+    /// </summary>
     public string Slug { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
+
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
     public string Url { get; set; }
   }
 }

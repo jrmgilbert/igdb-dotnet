@@ -1,32 +1,32 @@
+using System;
+
 namespace IGDB.Models
 {
-  public class CompanyWebsite : IIdentifier, IHasChecksum
+  /// <summary>
+  /// Company Website
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#company-website"/>
+  public class CompanyWebsite : IgdbEntityBase
   {
-    public CompanyWebsiteCategory? Category { get; set; }
-    public string Checksum { get; set; }
-    public long? Id { get; set; }
-    public bool? Trusted { get; set; }
-    public string Url { get; set; }
-  }
+    /// <summary>
+    /// DEPRECATED! Use <see cref="Type"> instead
+    /// </summary>
+    [Obsolete("Use Type instead", error: false)]
+    public Enums.CompanyWebsiteCategory? Category { get; set; }
 
-  public enum CompanyWebsiteCategory
-  {
-    Official = 1,
-    Wikia = 2,
-    Wikipedia = 3,
-    Facebook = 4,
-    Twitter = 5,
-    Twitch = 6,
-    Instagram = 8,
-    YouTube = 9,
-    iPhone = 10,
-    iPad = 11,
-    Android = 12,
-    Steam = 13,
-    Reddit = 14,
-    Itch = 15,
-    EpicGames = 16,
-    GOG = 17,
-    Discord = 18
+    /// <summary>
+    /// 
+    /// </summary>
+    public bool? Trusted { get; set; }
+
+    /// <summary>
+    /// The website type associated with the website
+    /// </summary>
+    public IdentityOrValue<WebsiteType> Type { get; set; }
+
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
+    public string Url { get; set; }
   }
 }

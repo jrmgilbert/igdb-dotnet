@@ -1,17 +1,29 @@
-using System;
-using Newtonsoft.Json;
-
 namespace IGDB.Models
 {
-  public class CollectionRelationType : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Collection Relation Types
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#collection-relation-type"/>
+  public class CollectionRelationType : IgdbTimestampedEntityBase
   {
+    /// <summary>
+    /// The allowed child collection type
+    /// </summary>
     public IdentityOrValue<CollectionType> AllowedChildType { get; set; }
+
+    /// <summary>
+    /// The allowed parent collection type
+    /// </summary>
     public IdentityOrValue<CollectionType> AllowedParentType { get; set; }
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
+
+    /// <summary>
+    /// The relationship type description
+    /// </summary>
     public string Description { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// The relationship type name
+    /// </summary>
     public string Name { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
   }
 }

@@ -1,18 +1,39 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class InvolvedCompany : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#involved-company"/>
+  public class InvolvedCompany : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
+    /// <summary>
+    /// 
+    /// </summary>
     public IdentityOrValue<Company> Company { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public bool? Developer { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public bool? Porting { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public bool? Publisher { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public bool? Supporting { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
   }
 }

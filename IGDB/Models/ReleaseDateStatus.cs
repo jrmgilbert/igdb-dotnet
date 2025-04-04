@@ -1,15 +1,19 @@
-using System;
-using Newtonsoft.Json;
-
 namespace IGDB.Models
 {
-  public class ReleaseDateStatus : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// An endpoint to provide definition of all of the current release date statuses
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#release-date-status"/>
+  public class ReleaseDateStatus : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
-    public long? Id { get; set; }
-    public string Name { get; set; }
+    /// <summary>
+    /// The description of the release date status
+    /// </summary>
     public string Description { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
+
+    /// <summary>
+    /// The name of the release date status
+    /// </summary>
+    public string Name { get; set; }
   }
 }

@@ -1,15 +1,24 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class LanguageSupport : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Games can be played with different languages for voice acting, subtitles, or the interface language
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#language-support"/>
+  public class LanguageSupport : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
-    public long? Id { get; set; }
+    /// <summary>
+    /// 
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public IdentityOrValue<Language> Language { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public IdentityOrValue<LanguageSupportType> LanguageSupportType { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
   }
 }

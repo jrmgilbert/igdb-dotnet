@@ -1,13 +1,29 @@
 namespace IGDB.Models
 {
-  public class GameVersionFeatureValue : IIdentifier, IHasChecksum
+  /// <summary>
+  /// The bool/text value of the feature
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#game-version-feature-value"/>
+  public class GameVersionFeatureValue : IgdbEntityBase
   {
-    
-    public string Checksum { get; set; }
+    /// <summary>
+    /// The version/edition this value refers to
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
+
+    /// <summary>
+    /// The id of the game feature
+    /// </summary>
     public IdentityOrValue<GameVersionFeature> GameFeature { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// The boole value of this feature
+    /// </summary>
     public IncludedFeature? IncludedFeature { get; set; }
+
+    /// <summary>
+    /// The text value of this feature
+    /// </summary>
     public string Note { get; set; }
   }
 

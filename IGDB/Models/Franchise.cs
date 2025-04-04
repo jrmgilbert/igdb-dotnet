@@ -1,16 +1,29 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class Franchise : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// A list of video game franchises such as Star Wars
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#franchise"/>
+  public class Franchise : IgdbTimestampedEntityBase
   {
-    public DateTimeOffset? CreatedAt { get; set; }
-    public string Checksum { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
-    public long? Id { get; set; }
+    /// <summary>
+    /// The games that are associated with this franchise
+    /// </summary>
     public IdentitiesOrValues<Game> Games { get; set; }
+
+    /// <summary>
+    /// The name of the franchise
+    /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// A url-safe, unique, lower-case version of the name
+    /// </summary>
     public string Slug { get; set; }
+
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
     public string Url { get; set; }
   }
 }

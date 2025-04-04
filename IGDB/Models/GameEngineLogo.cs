@@ -1,15 +1,10 @@
 namespace IGDB.Models
 {
-  public class GameEngineLogo : IIdentifier, IHasChecksum
+  /// <summary>
+  /// The logos of game engines
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#game-engine-logo"/>
+  public class GameEngineLogo : IgdbImageEntityBase
   {
-    public bool? AlphaChannel { get; set; }
-    public bool? Animated { get; set; }
-    
-    public string Checksum { get; set; }
-    public int? Height { get; set; }
-    public long? Id { get; set; }
-    public string ImageId { get; set; }
-    public string Url { get; set; }
-    public int? Width { get; set; }
   }
 }

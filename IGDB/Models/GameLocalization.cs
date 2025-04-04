@@ -1,18 +1,29 @@
-using System;
-using System.Globalization;
-
 namespace IGDB.Models
 {
-  public class GameLocalization : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Game localization for a game
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#game-localization"/>
+  public class GameLocalization : IgdbTimestampedEntityBase
   {
-
-    public string Checksum { get; set; }
+    /// <summary>
+    /// The cover of this game localization
+    /// </summary>
     public IdentityOrValue<Cover> Cover { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
+
+    /// <summary>
+    /// The Game the localization belongs to
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// The Region of the localization
+    /// </summary>
     public IdentityOrValue<Region> Region { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
   }
 }

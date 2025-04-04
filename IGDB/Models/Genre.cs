@@ -1,20 +1,24 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class Genre : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Genres of video game
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#genre"/>
+  public class Genre : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    
-    public DateTimeOffset? CreatedAt { get; set; }
-
-    public DateTimeOffset? UpdatedAt { get; set; }
-    public long? Id { get; set; }
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Name { get; set; }
 
+    /// <summary>
+    /// A url-safe, unique, lower-case version of the name
+    /// </summary>
     public string Slug { get; set; }
 
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
     public string Url { get; set; }
   }
 }

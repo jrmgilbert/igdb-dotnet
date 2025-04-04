@@ -1,18 +1,24 @@
-using System;
-using Newtonsoft.Json;
-
 namespace IGDB.Models
 {
-  public class CollectionMembership : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// The Collection Memberships
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#collection-membership"/>
+  public class CollectionMembership : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
+    /// <summary>
+    /// The collection that is associated with this membership
+    /// </summary>
     public IdentityOrValue<Collection> Collection { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
+
+    /// <summary>
+    /// The game that is associated with this membership
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
-    public long? Id { get; set; }
-    public string Name { get; set; }
+
+    /// <summary>
+    /// The Collection Membership Type
+    /// </summary>
     public IdentityOrValue<CollectionMembershipType> Type { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
-    public string Url { get; set; }
   }
 }

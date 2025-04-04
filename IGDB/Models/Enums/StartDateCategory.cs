@@ -1,6 +1,9 @@
-namespace IGDB.Models
+using System;
+
+namespace IGDB.Models.Enums
 {
-  public enum ReleaseDateCategory
+  [Obsolete("Use DateFormat instead", error: false)]
+  public enum StartDateCategory
   {
     YYYYMMMMDD = 0,
     YYYYMMMM = 1,

@@ -1,34 +1,24 @@
 namespace IGDB.Models
 {
-  public class PlatformWebsite : IIdentifier, IHasChecksum
+  /// <summary>
+  /// The main website for the platform
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#platform-website"/>
+  public class PlatformWebsite : IgdbEntityBase
   {
-    public PlatformWebsiteCategory? Category { get; set; }
-    public string Checksum { get; set; }
-    public long? Id { get; set; }
-    public bool? Trusted { get; set; }
-    public string Url { get; set; }
-  }
+    /// <summary>
+    /// The service this website links to
+    /// </summary>
+    public Enums.PlatformWebsiteCategory? Category { get; set; }
 
-  public enum PlatformWebsiteCategory
-  {
-    Official = 1,
-    Wikia = 2,
-    Wikipedia = 3,
-    Facebook = 4,
-    Twitter = 5,
-    Twitch = 6,
-    Instagram = 8,
-    YouTube = 9,
-    iPhone = 10,
-    iPad = 11,
-    Android = 12,
-    Steam = 13,
-    Reddit = 14,
-    Discord = 15,
-    GooglePlus = 16,
-    Tumblr = 17,
-    LinkedIn = 18,
-    Pinterest = 19,
-    SoundCloud = 20
+    /// <summary>
+    /// 
+    /// </summary>
+    public bool? Trusted { get; set; }
+
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
+    public string Url { get; set; }
   }
 }

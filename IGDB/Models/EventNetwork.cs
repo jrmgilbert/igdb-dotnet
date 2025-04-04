@@ -1,15 +1,24 @@
-using System;
-
 namespace IGDB.Models
 {
-  public class EventNetwork : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Urls related to the event like twitter, facebook and youtube
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#event-network"/> 
+  public class EventNetwork : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
+    /// <summary>
+    /// The event associated with this URL.
+    /// </summary>
     public IdentityOrValue<Event> Event { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// Network type
+    /// </summary>
     public IdentityOrValue<NetworkType> NetworkType { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
+
+    /// <summary>
+    /// The website address (URL) of the item
+    /// </summary>
     public string Url { get; set; }
   }
 }

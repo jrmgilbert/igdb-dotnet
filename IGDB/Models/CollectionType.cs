@@ -1,15 +1,19 @@
-using System;
-using Newtonsoft.Json;
-
 namespace IGDB.Models
 {
-  public class CollectionType : ITimestamps, IHasChecksum
+  /// <summary>
+  /// Enums for collection types.
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#collection-type"/>
+  public class CollectionType : IgdbTimestampedEntityBase
   {
-    public string Checksum { get; set; }
-    public DateTimeOffset? CreatedAt { get; set; }
+    /// <summary>
+    /// Description of the collection type
+    /// </summary>
     public string Description { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// The name of the collection type
+    /// </summary>
     public string Name { get; set; }
-    public DateTimeOffset? UpdatedAt { get; set; }
   }
 }

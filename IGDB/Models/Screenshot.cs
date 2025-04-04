@@ -1,15 +1,14 @@
 namespace IGDB.Models
 {
-  public class Screenshot : IIdentifier, IHasChecksum
+  /// <summary>
+  /// Screenshots of games
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#screenshot"/>
+  public class Screenshot : IgdbImageEntityBase
   {
-    public bool? AlphaChannel { get; set; }
-    public bool? Animated { get; set; }
-    public string Checksum { get; set; }
+    /// <summary>
+    /// The game this video is associated with
+    /// </summary>
     public IdentityOrValue<Game> Game { get; set; }
-    public int? Height { get; set; }
-    public long? Id { get; set; }
-    public string ImageId { get; set; }
-    public string Url { get; set; }
-    public int? Width { get; set; }
   }
 }

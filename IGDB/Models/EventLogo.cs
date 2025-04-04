@@ -2,18 +2,25 @@ using System;
 
 namespace IGDB.Models
 {
-  public class EventLogo : ITimestamps, IIdentifier, IHasChecksum
+  /// <summary>
+  /// Logo for the event
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#event-logo"/> 
+  public class EventLogo : IgdbImageEntityBase, ITimestamps
   {
-    public bool? AlphaChannel { get; set; }
-    public bool? Animated { get; set; }
-    public string Checksum { get; set; }
+    /// <summary>
+    /// Date this was initially added to the IGDB database
+    /// </summary>
     public DateTimeOffset? CreatedAt { get; set; }
+
+    /// <summary>
+    /// The event associated with this logo.
+    /// </summary>
     public IdentityOrValue<Event> Event { get; set; }
-    public int? Height { get; set; }
-    public long? Id { get; set; }
-    public string ImageId { get; set; }
+
+    /// <summary>
+    /// The last date this entry was updated in the IGDB database
+    /// </summary>
     public DateTimeOffset? UpdatedAt { get; set; }
-    public string Url { get; set; }
-    public int? Width { get; set; }
   }
 }

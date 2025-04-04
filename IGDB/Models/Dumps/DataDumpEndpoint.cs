@@ -6,10 +6,15 @@ namespace IGDB.Models
   public class DataDumpEndpoint
   {
     public string S3Url { get; set; }
+
     public string Endpoint { get; set; }
+
     public string FileName { get; set; }
+
     public long SizeBytes { get; set; }
+
     public DateTimeOffset UpdatedAt { get; set; }
+
     public string SchemaVersion { get; set; }
 
     /// <summary>

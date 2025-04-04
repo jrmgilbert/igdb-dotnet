@@ -1,17 +1,15 @@
-using Newtonsoft.Json;
 
 namespace IGDB.Models
 {
-    public class Artwork : IIdentifier, IHasChecksum
-    {
-        public bool? AlphaChannel { get; set; }
-        public bool? Animated { get; set; }
-        public string Checksum { get; set; }
-        public IdentityOrValue<Game> Game { get; set; }
-        public int? Height { get; set; }
-        public long? Id { get; set; }
-        public string ImageId { get; set; }
-        public string Url { get; set; }
-        public int? Width { get; set; }
-    }
+  /// <summary>
+  /// official artworks (resolution and aspect ratio may vary)
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#artwork"/>
+  public class Artwork : IgdbImageEntityBase
+  {
+    /// <summary>
+    /// The game this artwork is associated with
+    /// </summary>
+    public IdentityOrValue<Game> Game { get; set; }
+  }
 }

@@ -1,12 +1,29 @@
 namespace IGDB.Models
 {
-  public class PlatformVersionCompany : IIdentifier, IHasChecksum
+  /// <summary>
+  /// A platform developer
+  /// </summary>
+  /// <seealso href="https://api-docs.igdb.com/#platform-version-company"/>
+  public class PlatformVersionCompany : IgdbEntityBase
   {
-    public string Checksum { get; set; }
+    /// <summary>
+    /// Any notable comments about the developer
+    /// </summary>
     public string Comment { get; set; }
+
+    /// <summary>
+    /// The company responsible for developing this platform version
+    /// </summary>
     public IdentityOrValue<Company> Company { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public bool? Developer { get; set; }
-    public long? Id { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public bool? Manufacturer { get; set; }
   }
 }
